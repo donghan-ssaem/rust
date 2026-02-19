@@ -6,7 +6,7 @@ from PIL import Image
 # 페이지 설정
 st.set_page_config(page_title="녹 분석기", layout="wide")
 
-st.title("🧪 부식 면적 실시간 분석기")
+st.title("🧪 부식 면적 분석기")
 
 # 1. 사이드바에 상세한 원리 설명과 슬라이더 배치
 with st.sidebar:
@@ -82,8 +82,11 @@ if uploaded_file:
         st.subheader("🔬 분석 결과")
         st.image(result_img, caption="빨간색 영역이 감지된 녹입니다.", use_container_width=True)
 
-    st.markdown(f"""
-    <div style="background-color:#f0f2f6;padding:25px;border-radius:15px;border:2px solid #ff4b4b;text-align:center;">
-        <h2 style="margin:0;">전체 면적 대비 녹 발생 비율: <span style="color:#ff4b4b;">{ratio:.2f}%</span></h2>
+st.markdown(f"""
+    <div style="background-color: #F8F9FA; padding: 30px; border-radius: 15px; border: 2px solid #DEE2E6; text-align: center; margin-top: 20px;">
+        <h2 style="color: #212529; margin: 0; font-family: sans-serif;">
+            전체 면적 대비 녹 발생 비율: 
+            <span style="color: #E63946; font-size: 1.2em; font-weight: bold;">{ratio:.2f}%</span>
+        </h2>
     </div>
     """, unsafe_allow_html=True)
